@@ -55,6 +55,18 @@
         </div>
     </nav>
 
+    <a href="lembur/tambah">
+        <button type="button"
+            class="ml-28 mt-6 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+            Tambah Data Lembur
+            <svg class="w-6 h-6 ml-2 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M5 12h14m-7 7V5" />
+            </svg>
+        </button>
+    </a>
+
     <div class="text-center">
         <h1 class="mt-5 text-5xl font-extrabold dark:text-white">Data Lembur</h1>
     </div>

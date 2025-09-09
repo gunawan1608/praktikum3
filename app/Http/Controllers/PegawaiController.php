@@ -11,4 +11,18 @@ class PegawaiController extends Controller
         $pegawai=DB::table('pegawai')->get();
         return view('pegawai',['pegawai'=>$pegawai]);
     }
+
+    public function tambah() {
+        return view('tambahpegawai');
+    }
+    public function store(Request $request) {
+        DB::table('pegawai')->insert([
+            'nama' => $request->nama,
+            'jabatan' => $request->jabatan,
+            'umur' => $request->umur,
+            'alamat' => $request->alamat
+        ]);
+
+        return redirect('/pegawai');
+    }
 }

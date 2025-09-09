@@ -11,4 +11,17 @@ class LemburController extends Controller
         $lembur=DB::table('lembur')->get();
         return view('lembur',['lembur'=>$lembur]);
     }
+
+    public function tambah() {
+        return view('tambahlembur');
+    }
+    public function store(Request $request) {
+        DB::table('lembur')->insert([
+            'Pegawai_id' => $request->id_pegawai,
+            'Bulan_lembur' => $request->bulan_lembur,
+            'Jumlah_lembur' => $request->jlembur,
+        ]);
+
+        return redirect('/lembur');
+    }
 }

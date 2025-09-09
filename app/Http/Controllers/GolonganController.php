@@ -11,4 +11,19 @@ class GolonganController extends Controller
         $golongan=DB::table('golongan')->get();
         return view('golongan',['golongan'=>$golongan]);
     }
+
+    public function tambah() {
+        return view('tambahgolongan');
+    }
+    public function store(Request $request) {
+        DB::table('golongan')->insert([
+            'Golongan_nama' => $request->namagol,
+            'Gaji_pokok' => $request->gaji,
+            'Tunjangan_keluarga' => $request->tkeluarga,
+            'Tunjangan_transport' => $request->ttransport,
+            'Tunjangan_makan' => $request->tmakan
+        ]);
+
+        return redirect('/golongan');
+    }
 }
