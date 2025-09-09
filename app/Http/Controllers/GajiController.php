@@ -27,4 +27,20 @@ class GajiController extends Controller
 
         return redirect('/gaji');
     }
+
+    public function edit($id){
+        $gaji = DB::table('gaji')->where('id', $id)->get();
+        return view('editgaji',['gaji'=>$gaji]);
+    }
+    public function update(Request $request){
+        DB::table('gaji')->where('id', $request->id)->update([
+            'Pegawai_id' => $request->id_pegawai,
+            'Jumlah_gaji' => $request->gaji,
+            'Jumlah_lembur' => $request->jlembur,
+            'Potongan' => $request->potongan,
+            'Gaji_diterima' => $request->gaji_diterima
+        ]);
+
+        return redirect('/gaji');
+    }
 }

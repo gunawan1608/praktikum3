@@ -24,4 +24,18 @@ class LemburController extends Controller
 
         return redirect('/lembur');
     }
+
+    public function edit($id){
+        $lembur = DB::table('lembur')->where('id', $id)->get();
+        return view('editlembur',['lembur'=>$lembur]);
+    }
+    public function update(Request $request){
+        DB::table('lembur')->where('id', $request->id)->update([
+            'Pegawai_id' => $request->id_pegawai,
+            'Jumlah_lembur' => $request->jlembur,
+            'Bulan_lembur' => $request->bulan_lembur,
+        ]);
+
+        return redirect('/lembur');
+    }
 }
