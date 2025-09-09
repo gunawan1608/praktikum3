@@ -16,6 +16,8 @@ Route::get('gaji',[GajiController::class, 'index']);
 Route::get('lembur',[LemburController::class, 'index']);
 Route::get('pegawai/tambah', [PegawaiController::class, 'tambah']);
 Route::post('pegawai/store', [PegawaiController::class, 'store']);
+Route::get('pegawai/edit/{id}', [PegawaiController::class, 'edit']);
+Route::post('pegawai/update', [PegawaiController::class, 'update']);
 Route::get('golongan/tambah', [GolonganController::class, 'tambah']);
 Route::post('golongan/store', [GolonganController::class, 'store']);
 Route::get('gaji/tambah', [GajiController::class, 'tambah']);
