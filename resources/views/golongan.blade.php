@@ -36,11 +36,11 @@
                     </li>
                     <li>
                         <a href="pegawai"
-                            class="block py-2 px-3 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500">Pegawai</a>
+                            class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Pegawai</a>
                     </li>
                     <li>
                         <a href="golongan"
-                            class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Golongan</a>
+                            class="block py-2 px-3 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500">Golongan</a>
                     </li>
                     <li>
                         <a href="gaji"
@@ -56,7 +56,7 @@
     </nav>
 
     <div class="text-center">
-        <h1 class="mt-5 text-5xl font-extrabold dark:text-white">Data Pegawai</h1>
+        <h1 class="mt-5 text-5xl font-extrabold dark:text-white">Data Golongan</h1>
     </div>
     <br><br>
 
@@ -65,19 +65,22 @@
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
                     <th scope="col" class="px-6 py-3">
-                        ID Pegawai
+                        ID Golongan
                     </th>
                     <th scope="col" class="px-6 py-3">
-                        Nama
+                        Golongan Nama
                     </th>
                     <th scope="col" class="px-6 py-3">
-                        Jabatan
+                        Gaji Pokok
                     </th>
                     <th scope="col" class="px-6 py-3">
-                        Umur
+                        Tunjangan Keluarga
                     </th>
                     <th scope="col" class="px-6 py-3">
-                        Alamat
+                        Tunjangan Transport
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Tunjangan Makan
                     </th>
                     <th scope="col" class="px-6 py-3">
                         Opsi
@@ -85,24 +88,27 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($pegawai as $p)
+                @foreach ($golongan as $g)
                     <tr
                         class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700 border-gray-200">
                         <th scope="row"
                             class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            {{$p->id}}
+                            {{ $g->id }}
                         </th>
                         <td class="px-6 py-4">
-                            {{$p->nama}}
+                            {{ $g->Golongan_nama }}
                         </td>
                         <td class="px-6 py-4">
-                            {{$p->jabatan}}
+                            {{ $g->Gaji_pokok }}
                         </td>
                         <td class="px-6 py-4">
-                            {{$p->umur}}
+                            {{ $g->Tunjangan_keluarga }}
                         </td>
                         <td class="px-6 py-4">
-                            {{$p->alamat}}
+                            {{ $g->Tunjangan_transport }}
+                        </td>
+                        <td class="px-6 py-4">
+                            {{ $g->Tunjangan_makan }}
                         </td>
                         <td class="px-6 py-4">
                             <a href="#"
