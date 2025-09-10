@@ -23,7 +23,7 @@ class PegawaiController extends Controller
             'alamat' => $request->alamat
         ]);
 
-        return redirect('/pegawai');
+        return redirect('/pegawai')->with('success', 'Data pegawai berhasil ditambahkan!');
     }
 
     public function edit($id){
@@ -38,11 +38,11 @@ class PegawaiController extends Controller
             'alamat' => $request->alamat
         ]);
 
-        return redirect('/pegawai');
+        return redirect('/pegawai')->with('success', 'Data pegawai berhasil diperbarui!');
     }
 
     public function hapus($id){
         DB::table('pegawai')->where('id', $id)->delete();
-        return redirect('/pegawai');
+        return redirect('/pegawai')->with('success', 'Data pegawai berhasil dihapus!');
     }
 }

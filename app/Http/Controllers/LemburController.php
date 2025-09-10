@@ -22,7 +22,7 @@ class LemburController extends Controller
             'Jumlah_lembur' => $request->jlembur,
         ]);
 
-        return redirect('/lembur');
+        return redirect('/lembur')->with('success', 'Data lembur berhasil ditambahkan!');
     }
 
     public function edit($id){
@@ -36,11 +36,11 @@ class LemburController extends Controller
             'Bulan_lembur' => $request->bulan_lembur,
         ]);
 
-        return redirect('/lembur');
+        return redirect('/lembur')->with('success', 'Data lembur berhasil diperbarui!');
     }
 
     public function hapus($id){
         DB::table('lembur')->where('id', $id)->delete();
-        return redirect('/lembur');
+        return redirect('/lembur')->with('success', 'Data lembur berhasil dihapus!');
     }
 }

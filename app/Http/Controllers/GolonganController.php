@@ -24,7 +24,7 @@ class GolonganController extends Controller
             'Tunjangan_makan' => $request->tmakan
         ]);
 
-        return redirect('/golongan');
+        return redirect('/golongan')->with('success', 'Data golongan berhasil ditambahkan!');
     }
 
     public function edit($id){
@@ -40,11 +40,11 @@ class GolonganController extends Controller
             'Tunjangan_makan' => $request->tmakan
         ]);
 
-        return redirect('/golongan');
+        return redirect('/golongan')->with('success', 'Data golongan berhasil diperbarui!');
     }
 
     public function hapus($id){
         DB::table('golongan')->where('id', $id)->delete();
-        return redirect('/golongan');
+        return redirect('/golongan')->with('success', 'Data golongan berhasil dihapus!');
     }
 }

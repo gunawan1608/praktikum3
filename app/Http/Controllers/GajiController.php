@@ -25,7 +25,7 @@ class GajiController extends Controller
             'Gaji_diterima' => $request->gaji_diterima
         ]);
 
-        return redirect('/gaji');
+        return redirect('/gaji')->with('success', 'Data gaji berhasil ditambahkan!');
     }
 
     public function edit($id){
@@ -41,11 +41,11 @@ class GajiController extends Controller
             'Gaji_diterima' => $request->gaji_diterima
         ]);
 
-        return redirect('/gaji');
+        return redirect('/gaji')->with('success', 'Data gaji berhasil diperbarui!');
     }
 
     public function hapus($id){
         DB::table('gaji')->where('id', $id)->delete();
-        return redirect('/gaji');
+        return redirect('/gaji')->with('success', 'Data gaji berhasil dihapus!');
     }
 }
