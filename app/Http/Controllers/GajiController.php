@@ -43,4 +43,9 @@ class GajiController extends Controller
 
         return redirect('/gaji');
     }
+
+    public function hapus($id){
+        DB::table('gaji')->where('id', $id)->delete();
+        return redirect('/gaji');
+    }
 }

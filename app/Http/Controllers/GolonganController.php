@@ -42,4 +42,9 @@ class GolonganController extends Controller
 
         return redirect('/golongan');
     }
+
+    public function hapus($id){
+        DB::table('golongan')->where('id', $id)->delete();
+        return redirect('/golongan');
+    }
 }

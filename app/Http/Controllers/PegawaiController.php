@@ -40,4 +40,9 @@ class PegawaiController extends Controller
 
         return redirect('/pegawai');
     }
+
+    public function hapus($id){
+        DB::table('pegawai')->where('id', $id)->delete();
+        return redirect('/pegawai');
+    }
 }

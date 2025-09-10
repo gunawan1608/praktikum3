@@ -14,19 +14,27 @@ Route::get('pegawai',[PegawaiController::class, 'index']);
 Route::get('golongan',[GolonganController::class, 'index']);
 Route::get('gaji',[GajiController::class, 'index']);
 Route::get('lembur',[LemburController::class, 'index']);
+
 Route::get('pegawai/tambah', [PegawaiController::class, 'tambah']);
 Route::post('pegawai/store', [PegawaiController::class, 'store']);
 Route::get('pegawai/edit/{id}', [PegawaiController::class, 'edit']);
+Route::get('pegawai/hapus/{id}', [PegawaiController::class, 'hapus']);
 Route::post('pegawai/update', [PegawaiController::class, 'update']);
+
 Route::get('golongan/tambah', [GolonganController::class, 'tambah']);
 Route::post('golongan/store', [GolonganController::class, 'store']);
 Route::get('golongan/edit/{id}', [GolonganController::class, 'edit']);
+Route::get('golongan/hapus/{id}', [GolonganController::class, 'hapus']);
 Route::post('golongan/update', [GolonganController::class, 'update']);
+
 Route::get('gaji/tambah', [GajiController::class, 'tambah']);
 Route::post('gaji/store', [GajiController::class, 'store']);
 Route::get('gaji/edit/{id}', [GajiController::class, 'edit']);
+Route::get('gaji/hapus/{id}', [GajiController::class, 'hapus']);
 Route::post('gaji/update', [GajiController::class, 'update']);
+
 Route::get('lembur/tambah', [LemburController::class, 'tambah']);
 Route::post('lembur/store', [LemburController::class, 'store']);
 Route::get('lembur/edit/{id}', [LemburController::class, 'edit']);
+Route::get('lembur/hapus/{id}', [LemburController::class, 'hapus']);
 Route::post('lembur/update', [LemburController::class, 'update']);

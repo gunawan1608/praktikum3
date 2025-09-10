@@ -38,4 +38,9 @@ class LemburController extends Controller
 
         return redirect('/lembur');
     }
+
+    public function hapus($id){
+        DB::table('lembur')->where('id', $id)->delete();
+        return redirect('/lembur');
+    }
 }
