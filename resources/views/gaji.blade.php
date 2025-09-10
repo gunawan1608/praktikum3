@@ -174,11 +174,109 @@
     <script>
         Swal.fire({
             icon: 'success',
-            title: 'Berhasil!',
+            title: 'Berhasil! 🎉',
             text: "{{ session('success') }}",
             showConfirmButton: false,
-            timer: 2000
+            timer: 3500,
+            timerProgressBar: true,
+            position: 'center',
+            toast: false,
+            backdrop: `
+                rgba(0,0,0,0.4)
+                left top
+                no-repeat
+            `,
+            customClass: {
+                popup: 'animated bounceIn',
+                title: 'swal-title',
+                content: 'swal-content'
+            },
+            showClass: {
+                popup: 'animate__animated animate__fadeInUp animate__faster'
+            },
+            hideClass: {
+                popup: 'animate__animated animate__fadeOutDown animate__faster'
+            },
+            didOpen: (popup) => {
+                // Tambahkan efek pulse pada icon
+                const icon = popup.querySelector('.swal2-icon');
+                if (icon) {
+                    icon.style.transform = 'scale(1.1)';
+                    icon.style.transition = 'all 0.3s ease';
+
+                    setTimeout(() => {
+                        icon.style.transform = 'scale(1)';
+                    }, 300);
+                }
+
+                // Tambahkan efek typing pada text
+                const content = popup.querySelector('.swal2-html-container');
+                if (content) {
+                    content.style.opacity = '0';
+                    content.style.transform = 'translateY(10px)';
+                    content.style.transition = 'all 0.5s ease';
+
+                    setTimeout(() => {
+                        content.style.opacity = '1';
+                        content.style.transform = 'translateY(0)';
+                    }, 200);
+                }
+            },
+            willClose: () => {
+                // Efek fade out yang smooth
+                const popup = Swal.getPopup();
+                popup.style.transform = 'scale(0.9)';
+                popup.style.opacity = '0';
+                popup.style.transition = 'all 0.3s ease';
+            }
         });
+
+        // Tambahkan style dinamis
+        const style = document.createElement('style');
+        style.innerHTML = `
+            .swal2-popup {
+                border-radius: 20px !important;
+                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15) !important;
+                backdrop-filter: blur(10px) !important;
+                border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            }
+
+            .swal2-icon.swal2-success {
+                border-color: #10b981 !important;
+                color: #10b981 !important;
+            }
+
+            .swal2-icon.swal2-success [class^='swal2-success-line'] {
+                background-color: #10b981 !important;
+            }
+
+            .swal2-icon.swal2-success .swal2-success-ring {
+                border-color: #10b981 !important;
+            }
+
+            .swal2-title {
+                font-size: 24px !important;
+                font-weight: 600 !important;
+                color: #1f2937 !important;
+                margin-bottom: 10px !important;
+            }
+
+            .swal2-html-container {
+                font-size: 16px !important;
+                color: #6b7280 !important;
+                line-height: 1.5 !important;
+            }
+
+            .swal2-timer-progress-bar {
+                background: linear-gradient(90deg, #10b981, #059669) !important;
+                height: 4px !important;
+            }
+
+            .swal2-popup.swal2-toast {
+                border-radius: 12px !important;
+            }
+        `;
+        document.head.appendChild(style);
     </script>
 @endif
 </html>
