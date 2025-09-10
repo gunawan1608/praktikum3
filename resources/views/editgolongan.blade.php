@@ -31,28 +31,28 @@
                     Pokok</label>
                 <input type="number" name="gaji" id="gaji"
                     class="shadow-xs bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-xs-light"
-                    placeholder="" required value="{{ $g->Gaji_pokok }}"/>
+                    placeholder="" required value="{{ $g->Gaji_pokok }}" min="0"/>
             </div>
             <div class="mb-5">
                 <label for="tkeluarga" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tunjangan
                     Keluarga</label>
                 <input type="number" name="tkeluarga" id="tkeluarga"
                     class="shadow-xs bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-xs-light"
-                    placeholder="" required value="{{ $g->Tunjangan_keluarga }}"/>
+                    placeholder="" required value="{{ $g->Tunjangan_keluarga }}" min="0"/>
             </div>
             <div class="mb-5">
                 <label for="ttransport" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tunjangan
                     Transport</label>
                 <input type="number" name="ttransport" id="ttransport"
                     class="shadow-xs bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-xs-light"
-                    placeholder="" required value="{{ $g->Tunjangan_transport }}"/>
+                    placeholder="" required value="{{ $g->Tunjangan_transport }}" min="0"/>
             </div>
             <div class="mb-5">
                 <label for="tmakan" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tunjangan
                     Makan</label>
                 <input type="number" name="tmakan" id="tmakan"
                     class="shadow-xs bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-xs-light"
-                    placeholder="" required value="{{ $g->Tunjangan_makan }}"/>
+                    placeholder="" required value="{{ $g->Tunjangan_makan }}" min="0"/>
             </div>
             <button type="submit"
                 class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
